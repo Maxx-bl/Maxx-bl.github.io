@@ -1802,7 +1802,7 @@ body.is-preload #footer {
 
 /* Navigation buttons */
 .carousel-button {
-	position: absolute;
+	/* position: absolute; */
 	top: 95%;
 	transform: translateY(-50%);
 	background-color: rgba(0, 0, 0, 0.5);
@@ -1820,4 +1820,9 @@ body.is-preload #footer {
 
 .carousel-button.next {
 	right: 0px;
+}
+
+.carousel-components {
+	display: flex;
+	justify-content: space-between;
 }
