@@ -14,7 +14,6 @@
 </head>
 
 <body class="is-preload">
-
 	<!-- Wrapper -->
 	<div id="wrapper">
 
@@ -26,9 +25,17 @@
 			<div class="content">
 				<div class="inner">
 					<h1>Maxx</h1>
-					<p>Welcome to my website, I'm a french computer science student <br> and here are few of <a
+					<script>
+						var content = ` and welcome to my website, I'm a french computer science student <br> and here are few of <a
 							href="#work">my own projects</a>.
-						Check out my <a href="https://github.com/Maxx-bl" target="_blank">github</a> for more ;)</p>
+						Check out my <a href="https://github.com/Maxx-bl" target="_blank">github</a> for more ;)</p>`;
+						var date = new Date();
+						var hour = date.getHours();
+						if (hour < 12) content = "&#x1f305  Good morning" + content;
+						else if (hour < 18) content = "&#x26C5 Good afternoon" + content;
+						else content = "&#x1F319 Good evening" + content;
+						document.write(content);
+					</script>
 				</div>
 			</div>
 			<nav>
