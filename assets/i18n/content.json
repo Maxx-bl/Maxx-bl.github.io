@@ -59,7 +59,7 @@
     },
     "contact": {
       "title": "Contact",
-      "bodyHtml": "N'hésitez pas à me contacter :<br><span class=\"fa-solid fa-phone\"></span> (+33) 07 68 66 90 10<br><span class=\"fa-solid fa-envelope\"></span> bl.maxandre@gmail.com<br><span class=\"fa-solid fa-file-pdf\"></span> <a href=\"images/cv.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">CV</a>",
+      "bodyHtml": "N'hésitez pas à me contacter :<br><span class=\"fa-solid fa-phone\"></span> (+33) 07 68 66 90 10<br><span class=\"fa-solid fa-envelope\"></span> bl.maxandre@gmail.com",
       "spokenLabel": "Langues parlées :"
     },
     "work": {
@@ -178,6 +178,16 @@
             "Jeu clicker réalisé avec Godot 4 et GDScript",
             "Équilibrage progression / upgrades"
           ]
+        },
+        "maxiflop": {
+          "titleHtml": "<a href=\"https://github.com/Maxx-bl/maxiflop\" target=\"_blank\" rel=\"noopener noreferrer\">Maxiflop</a> - 2026",
+          "descriptionHtml": "Maxiflop est un jeu de rythme multijoueur type piano tiles à la façon d'un Kahoot sur un écran commun.",
+          "bullets": [
+            "Développement d'un jeu vidéo avec Godot4 & GDScript",
+            "Jeu de rythme multijoueur",
+            "Gestion clients/serveur (téléphones des joueurs)",
+            "Projet fait en équipe (3 personnes)"
+          ]
         }
       }
     },
@@ -249,7 +259,7 @@
     },
     "contact": {
       "title": "Contact",
-      "bodyHtml": "Feel free to contact me:<br><span class=\"fa-solid fa-phone\"></span> (+33) 07 68 66 90 10<br><span class=\"fa-solid fa-envelope\"></span> bl.maxandre@gmail.com<br><span class=\"fa-solid fa-file-pdf\"></span> <a href=\"images/cv.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Resume (PDF)</a>",
+      "bodyHtml": "Feel free to contact me:<br><span class=\"fa-solid fa-phone\"></span> (+33) 07 68 66 90 10<br><span class=\"fa-solid fa-envelope\"></span> bl.maxandre@gmail.com",
       "spokenLabel": "Spoken languages:"
     },
     "work": {
@@ -368,7 +378,18 @@
             "Clicker game built with Godot 4 and GDScript",
             "Progression and upgrades balancing"
           ]
-        }
+        },
+        "maxiflop": {
+        "titleHtml": "<a href=\"https://github.com/Maxx-bl/maxiflop\" target=\"_blank\" rel=\"noopener noreferrer\">Maxiflop</a> - 2026",
+        "descriptionHtml": "Maxiflop is a multiplayer rhythm game similar to piano tiles, in the style of Kahoot on a shared screen.",
+        "bullets": [
+          "Development of a video game using Godot4 & GDScript",
+          "Multiplayer rhythm game",
+          "Client/server management (players' phones)",
+          "Team project (3 people)"
+        ]
+      }
+
       }
     },
     "footer": {
