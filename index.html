@@ -59,11 +59,33 @@
 
       function copyMail() {
         const mail = document.getElementById('mail-address').textContent;
-        navigator.clipboard.writeText(mail).then(() => {
+
+        function showCheck() {
           const icon = document.getElementById('copy-icon');
           icon.className = 'fa-solid fa-check';
           setTimeout(() => { icon.className = 'fa-regular fa-copy'; }, 1500);
-        });
+        }
+
+        function fallbackCopy(text) {
+          const el = document.createElement('textarea');
+          el.value = text;
+          el.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+          document.body.appendChild(el);
+          el.focus();
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(mail).then(showCheck).catch(() => {
+            fallbackCopy(mail);
+            showCheck();
+          });
+        } else {
+          fallbackCopy(mail);
+          showCheck();
+        }
       }
 
       document.addEventListener('click', () => {
