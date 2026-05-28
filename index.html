@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synae</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- Avatar -->
+    <div class="avatar-wrap">
+      <i class="fa-solid fa-user"></i>
+    </div>
+
+    <!-- Name -->
+    <div class="name">Synae</div>
+    <div class="tagline">Hi, I'm a french computer science student :)</div>
+
+    <div class="divider"></div>
+
+    <!-- Links -->
+    <a class="link-btn" href="https://portfolio.synae.dev" target="_blank">
+      <div class="icon"><i class="fa-solid fa-code"></i></div>
+      <span class="label">Portfolio</span>
+    </a>
+
+    <a class="link-btn" href="https://glyphe.synae.dev" target="_blank">
+      <div class="icon"><i class="fa-solid fa-users"></i></div>
+      <span class="label">Glyphe - Social network (mobile / web app)</span>
+    </a>
+
+    <!-- Social icons -->
+    <div class="socials">
+      <div class="mail-wrap">
+        <button class="social-btn" id="mail-btn" aria-label="Email" onclick="toggleMailPopup(event)">
+          <i class="fa-regular fa-envelope"></i>
+        </button>
+        <div class="mail-popup" id="mail-popup" onclick="event.stopPropagation()">
+          <span id="mail-address">me@synae.dev</span>
+          <button class="copy-btn" onclick="copyMail()" title="Copier">
+            <i class="fa-regular fa-copy" id="copy-icon"></i>
+          </button>
+        </div>
+      </div>
+      <a class="social-btn" href="https://github.com/Maxx-bl" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a class="social-btn" href="https://www.instagram.com/max13.bl" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="social-btn" href="https://linkedin.com/in/maxandre-bl" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+    </div>
+
+    <script>
+      function toggleMailPopup(e) {
+        e.stopPropagation();
+        document.getElementById('mail-popup').classList.toggle('visible');
+      }
+
+      function copyMail() {
+        const mail = document.getElementById('mail-address').textContent;
+        navigator.clipboard.writeText(mail).then(() => {
+          const icon = document.getElementById('copy-icon');
+          icon.className = 'fa-solid fa-check';
+          setTimeout(() => { icon.className = 'fa-regular fa-copy'; }, 1500);
+        });
+      }
+
+      document.addEventListener('click', () => {
+        document.getElementById('mail-popup').classList.remove('visible');
+      });
+    </script>
+
+    <div class="footer">Synae · 2026</div>
+  </div>
+</body>
+</html>

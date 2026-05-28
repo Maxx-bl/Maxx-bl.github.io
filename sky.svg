@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7aafc4"/>
+      <stop offset="100%" stop-color="#c0d8e5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="480" height="300" fill="url(#skyGrad)"/>
+
+  <!-- Vintage warm tint -->
+  <rect width="480" height="300" fill="#f5e8cc" opacity="0.10"/>
+
+  <!-- Clouds — pixel size = 8 SVG units -->
+  <!-- each cloud shape:
+       small  (6×3):  . #### .  /  ######  /  ######
+       medium (7×4):  . . ### . .  /  . ##### .  /  #######  ×2
+       large (11×5):  . . . ##### . . .  /  . . ####### . .  /  . ######### .  /  ########### ×2
+  -->
+  <g fill="#ddeaf3">
+
+    <!-- A — medium, upper-left (20, 18) -->
+    <rect x="36" y="18" width="24" height="8"/>
+    <rect x="28" y="26" width="40" height="8"/>
+    <rect x="20" y="34" width="56" height="16"/>
+
+    <!-- B — large, upper-center (165, 10) -->
+    <rect x="189" y="10" width="40" height="8"/>
+    <rect x="181" y="18" width="56" height="8"/>
+    <rect x="173" y="26" width="72" height="8"/>
+    <rect x="165" y="34" width="88" height="16"/>
+
+    <!-- C — small, upper-right (368, 26) -->
+    <rect x="376" y="26" width="32" height="8"/>
+    <rect x="368" y="34" width="48" height="16"/>
+
+    <!-- D — small, mid-left (108, 82) -->
+    <rect x="116" y="82" width="32" height="8"/>
+    <rect x="108" y="90" width="48" height="16"/>
+
+    <!-- E — medium, mid-right (370, 110) -->
+    <rect x="386" y="110" width="24" height="8"/>
+    <rect x="378" y="118" width="40" height="8"/>
+    <rect x="370" y="126" width="56" height="16"/>
+
+    <!-- F — medium, lower-left (42, 150) -->
+    <rect x="58" y="150" width="24" height="8"/>
+    <rect x="50" y="158" width="40" height="8"/>
+    <rect x="42" y="166" width="56" height="16"/>
+
+    <!-- G — large, lower-center-right (252, 178) -->
+    <rect x="276" y="178" width="40" height="8"/>
+    <rect x="268" y="186" width="56" height="8"/>
+    <rect x="260" y="194" width="72" height="8"/>
+    <rect x="252" y="202" width="88" height="16"/>
+
+    <!-- H — tiny, lower-right (400, 220) -->
+    <rect x="408" y="220" width="24" height="8"/>
+    <rect x="400" y="228" width="40" height="8"/>
+
+  </g>
+</svg>

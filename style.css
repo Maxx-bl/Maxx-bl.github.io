@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+:root {
+  --bg: #9ec6d6;
+  --card-bg: #fdf6e3;
+  --text-dark: #1a1a1a;
+  --border: 2px solid #1a1a1a;
+  --shadow-size: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: url('sky.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  image-rendering: pixelated;
+  font-family: 'Space Grotesk', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 48px 16px 64px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Avatar */
+.avatar-wrap {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  border: var(--border);
+  box-shadow: var(--shadow-size) var(--shadow-size) 0px #1a1a1a;
+  overflow: hidden;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-wrap .fa-user {
+  font-size: 38px;
+  color: #fdf6e3;
+  margin-top: 8px;
+}
+
+/* Name & tagline */
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fdf6e3;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(253,246,227,0.75);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 2px;
+  background: rgba(253,246,227,0.25);
+  margin: 4px 0 8px;
+}
+
+/* Link buttons */
+.link-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 20px;
+  background: var(--card-bg);
+  border: var(--border);
+
+  /* shadow via translate trick: margin-bottom absorbs the shift */
+  --offset: 4px;
+  box-shadow: var(--offset) var(--offset) 0px #1a1a1a;
+
+  text-decoration: none;
+  color: var(--text-dark);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* single transition on transform only — shadow tracks it via the variable below */
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.link-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+.link-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #1a1a1a;
+  transition-duration: 0.05s;
+}
+
+.link-btn .icon {
+  width: 36px;
+  height: 36px;
+  border: var(--border);
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: #fdf6e3;
+}
+
+.link-btn .label {
+  flex: 1;
+  text-align: center;
+}
+
+.link-btn .thumb {
+  width: 36px;
+  height: 36px;
+  border: var(--border);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Social icons row */
+.socials {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--card-bg);
+  border: var(--border);
+  box-shadow: 4px 4px 0px #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 17px;
+  color: var(--text-dark);
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.12s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+.social-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+.social-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #1a1a1a;
+  transition-duration: 0.05s;
+}
+
+/* Mail popup */
+.mail-wrap {
+  position: relative;
+}
+
+.social-btn[id="mail-btn"] {
+  background: var(--card-bg);
+  border: var(--border);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.mail-popup {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 10px 16px;
+  border: var(--border);
+  box-shadow: 4px 4px 0px #1a1a1a;
+  z-index: 10;
+}
+
+.mail-popup.visible {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Arrow: rotated square pointing down toward the button */
+.mail-popup::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 13px;
+  height: 13px;
+  background: #ffffff;
+  border-bottom: 2px solid #1a1a1a;
+  border-right: 2px solid #1a1a1a;
+}
+
+.copy-btn {
+  background: #1a1a1a;
+  border: 2px solid #1a1a1a;
+  color: #fdf6e3;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  flex-shrink: 0;
+  transition: background 0.1s;
+}
+
+.copy-btn:hover {
+  background: #333;
+}
+
+/* Footer */
+.footer {
+  margin-top: 28px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(30, 60, 80, 0.5);
+}
