@@ -45,7 +45,7 @@ body {
   height: 88px;
   border-radius: 50%;
   border: var(--border);
-  box-shadow: var(--shadow-size) var(--shadow-size) 0px #1a1a1a;
+  box-shadow: none;
   overflow: hidden;
   background: #1a1a1a;
   display: flex;
