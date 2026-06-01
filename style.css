@@ -261,6 +261,55 @@ body {
   background: #333;
 }
 
+/* Discord popup */
+.discord-wrap {
+  position: relative;
+}
+
+.social-btn[id="discord-btn"] {
+  background: var(--card-bg);
+  border: var(--border);
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.discord-popup {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 10px 16px;
+  border: var(--border);
+  box-shadow: 4px 4px 0px #1a1a1a;
+  z-index: 10;
+}
+
+.discord-popup.visible {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discord-popup::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 13px;
+  height: 13px;
+  background: #ffffff;
+  border-bottom: 2px solid #1a1a1a;
+  border-right: 2px solid #1a1a1a;
+}
+
 /* Footer */
 .footer {
   margin-top: 28px;

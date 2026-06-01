@@ -30,7 +30,12 @@
 
     <a class="link-btn" href="https://glyphe.synae.dev" target="_blank">
       <div class="icon"><i class="fa-solid fa-users"></i></div>
-      <span class="label">Glyphe - Social network (mobile / web app)</span>
+      <span class="label">Glyphe - Social network (mobile / web app) E2EE messaging and account data privacy</span>
+    </a>
+
+    <a class="link-btn" href="https://paired.synae.dev" target="_blank">
+      <div class="icon"><i class="fa-solid fa-file"></i></div>
+      <span class="label">Paired - P2P file transfer (10go) anonymous and ephemeral E2EE messaging - no registration</span>
     </a>
 
     <!-- Social icons -->
@@ -47,6 +52,17 @@
         </div>
       </div>
       <a class="social-btn" href="https://github.com/Maxx-bl" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <div class="discord-wrap">
+        <button class="social-btn" id="discord-btn" aria-label="Discord" onclick="toggleDiscordPopup(event)">
+          <i class="fa-brands fa-discord"></i>
+        </button>
+        <div class="discord-popup" id="discord-popup" onclick="event.stopPropagation()">
+          <span id="discord-tag">maxbl</span>
+          <button class="copy-btn" onclick="copyDiscord()" title="Copier">
+            <i class="fa-regular fa-copy" id="discord-copy-icon"></i>
+          </button>
+        </div>
+      </div>
       <a class="social-btn" href="https://www.instagram.com/max13.bl" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
       <a class="social-btn" href="https://linkedin.com/in/maxandre-bl" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
     </div>
@@ -88,8 +104,46 @@
         }
       }
 
+      function toggleDiscordPopup(e) {
+        e.stopPropagation();
+        document.getElementById('discord-popup').classList.toggle('visible');
+      }
+
+      function copyDiscord() {
+        const tag = document.getElementById('discord-tag').textContent;
+
+        function showDiscordCheck() {
+          const icon = document.getElementById('discord-copy-icon');
+          icon.className = 'fa-solid fa-check';
+          setTimeout(() => { icon.className = 'fa-regular fa-copy'; }, 1500);
+        }
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(tag).then(showDiscordCheck).catch(() => {
+            const el = document.createElement('textarea');
+            el.value = tag;
+            el.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+            document.body.appendChild(el);
+            el.focus(); el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            showDiscordCheck();
+          });
+        } else {
+          const el = document.createElement('textarea');
+          el.value = tag;
+          el.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+          document.body.appendChild(el);
+          el.focus(); el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+          showDiscordCheck();
+        }
+      }
+
       document.addEventListener('click', () => {
         document.getElementById('mail-popup').classList.remove('visible');
+        document.getElementById('discord-popup').classList.remove('visible');
       });
     </script>
 
