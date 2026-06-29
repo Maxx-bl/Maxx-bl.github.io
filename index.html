@@ -122,12 +122,37 @@
         }
       }
 
+      function closeSideProjects() {
+        const popup = document.getElementById('side-projects-popup');
+        if (!popup.classList.contains('visible')) return;
+        popup.style.height = popup.scrollHeight + 'px';
+        requestAnimationFrame(() => {
+          popup.classList.remove('visible');
+          popup.style.height = '0';
+          document.getElementById('side-chevron').style.transform = '';
+        });
+      }
+
       function toggleSideProjectsPopup(e) {
         e.stopPropagation();
         const popup = document.getElementById('side-projects-popup');
         const chevron = document.getElementById('side-chevron');
-        const isVisible = popup.classList.toggle('visible');
-        chevron.style.transform = isVisible ? 'rotate(180deg)' : '';
+
+        if (popup.classList.contains('visible')) {
+          closeSideProjects();
+        } else {
+          popup.style.height = '0';
+          popup.classList.add('visible');
+          requestAnimationFrame(() => {
+            popup.style.height = popup.scrollHeight + 'px';
+          });
+          popup.addEventListener('transitionend', function onEnd(ev) {
+            if (ev.propertyName !== 'height') return;
+            popup.removeEventListener('transitionend', onEnd);
+            if (popup.classList.contains('visible')) popup.style.height = 'auto';
+          });
+          chevron.style.transform = 'rotate(180deg)';
+        }
       }
 
       function toggleDiscordPopup(e) {
@@ -170,8 +195,7 @@
       document.addEventListener('click', () => {
         document.getElementById('mail-popup').classList.remove('visible');
         document.getElementById('discord-popup').classList.remove('visible');
-        document.getElementById('side-projects-popup').classList.remove('visible');
-        document.getElementById('side-chevron').style.transform = '';
+        closeSideProjects();
       });
     </script>
 
