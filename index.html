@@ -38,15 +38,23 @@
       <span class="label">Paired - P2P file transfer (10go) anonymous and ephemeral E2EE messaging - no registration</span>
     </a>
 
-    <a class="link-btn" href="https://locomotube.synae.dev" target="_blank">
-      <div class="icon"><i class="fa-solid fa-video"></i></div>
-      <span class="label">LocomoTube - Download YouTube videos and music</span>
-    </a>
-
-    <a class="link-btn" href="https://token.synae.dev" target="_blank">
-      <div class="icon"><i class="fa-solid fa-gear"></i></div>
-      <span class="label">Token & Password generator</span>
-    </a>
+    <div class="side-projects-wrap">
+      <button class="link-btn" id="side-projects-btn" onclick="toggleSideProjectsPopup(event)">
+        <div class="icon"><i class="fa-solid fa-flask"></i></div>
+        <span class="label">Side projects</span>
+        <i class="fa-solid fa-chevron-down side-chevron" id="side-chevron"></i>
+      </button>
+      <div class="side-projects-popup" id="side-projects-popup" onclick="event.stopPropagation()">
+        <a href="https://locomotube.synae.dev" target="_blank" class="side-project-item">
+          <div class="sp-icon"><i class="fa-solid fa-video"></i></div>
+          <span>LocomoTube - Download YouTube videos and music</span>
+        </a>
+        <a href="https://token.synae.dev" target="_blank" class="side-project-item">
+          <div class="sp-icon"><i class="fa-solid fa-gear"></i></div>
+          <span>Token & Password generator</span>
+        </a>
+      </div>
+    </div>
 
     <!-- Social icons -->
     <div class="socials">
@@ -114,6 +122,14 @@
         }
       }
 
+      function toggleSideProjectsPopup(e) {
+        e.stopPropagation();
+        const popup = document.getElementById('side-projects-popup');
+        const chevron = document.getElementById('side-chevron');
+        const isVisible = popup.classList.toggle('visible');
+        chevron.style.transform = isVisible ? 'rotate(180deg)' : '';
+      }
+
       function toggleDiscordPopup(e) {
         e.stopPropagation();
         document.getElementById('discord-popup').classList.toggle('visible');
@@ -154,6 +170,8 @@
       document.addEventListener('click', () => {
         document.getElementById('mail-popup').classList.remove('visible');
         document.getElementById('discord-popup').classList.remove('visible');
+        document.getElementById('side-projects-popup').classList.remove('visible');
+        document.getElementById('side-chevron').style.transform = '';
       });
     </script>
 
