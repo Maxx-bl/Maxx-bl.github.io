@@ -340,6 +340,7 @@ button.link-btn {
   font-family: 'Space Grotesk', sans-serif;
   border: none;
   box-shadow: none;
+  margin-top: 8px;
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.22s ease,
               border 0s 0.22s,
@@ -350,7 +351,6 @@ button.link-btn {
   opacity: 1;
   pointer-events: auto;
   border: var(--border);
-  border-top: none;
   box-shadow: 4px 4px 0px #1a1a1a;
   transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
               opacity 0.22s ease,

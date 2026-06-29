@@ -126,11 +126,10 @@
         const popup = document.getElementById('side-projects-popup');
         if (!popup.classList.contains('visible')) return;
         popup.style.height = popup.scrollHeight + 'px';
-        requestAnimationFrame(() => {
-          popup.classList.remove('visible');
-          popup.style.height = '0';
-          document.getElementById('side-chevron').style.transform = '';
-        });
+        void popup.offsetHeight; // force reflow so the browser commits the explicit height before transitioning
+        popup.classList.remove('visible');
+        popup.style.height = '0';
+        document.getElementById('side-chevron').style.transform = '';
       }
 
       function toggleSideProjectsPopup(e) {
