@@ -381,14 +381,24 @@ button.link-btn {
   background: rgba(26, 26, 26, 0.06);
 }
 
-.side-projects-popup.visible .side-project-item:nth-child(1) {
+.side-projects-popup.visible .side-project-item {
   opacity: 1;
+}
+
+.side-projects-popup.visible .side-project-item:nth-child(1) {
   transition-delay: 0.1s;
 }
 
 .side-projects-popup.visible .side-project-item:nth-child(2) {
-  opacity: 1;
   transition-delay: 0.16s;
+}
+
+.side-projects-popup.visible .side-project-item:nth-child(3) {
+  transition-delay: 0.22s;
+}
+
+.side-projects-popup.visible .side-project-item:nth-child(4) {
+  transition-delay: 0.28s;
 }
 
 .sp-icon {
